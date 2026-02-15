@@ -1,47 +1,197 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://use.typekit.net/coa5ljd.css">
+  <title>charity: water – Landing</title>
+
+  <style>
+    :root{
+      --black:#111111;
+      --yellow:#FFC400;
+      --cream:#F3EFE6;
+      --blue:#0B3E77;
+      --blue-hover:#08335f;
+      --white:#ffffff;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:"proxima-nova", sans-serif;
+      color:#111;
+      background:#fff;
+    }
+
+    /* HEADER (black bar + centered logo) */
+    header{
+      background:var(--black);
+      padding:18px 20px;
+    }
+    .topbar{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .logo{
+      height:28px;
+      width:auto;
+      display:block;
+    }
+
+    /* HERO (two panels) */
+    .hero{
+      width:100%;
+      min-height:calc(100vh - 64px);
+      display:grid;
+      grid-template-columns: 42% 58%;   /* matches the screenshot proportion */
+    }
+
+    /* LEFT yellow panel */
+    .left{
+      background:var(--yellow);
+      padding:72px 64px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      gap:22px;
+    }
+
+    h1{
+      margin:0;
+      font-size:72px;          /* screenshot-style */
+      line-height:1.02;
+      font-weight:800;
+      letter-spacing:-0.02em;
+    }
+
+    .lead{
+      margin:0;
+      max-width:42ch;
+      font-size:18px;
+      line-height:1.6;
+      font-weight:600;
+    }
+
+    .cta{
+      margin-top:28px;
+      width:320px;
+      padding:20px 26px;
+      border-radius:16px;
+      background:var(--blue);
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      font-size:22px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 10px 0 rgba(0,0,0,.15);
+      transition:background .2s ease, transform .08s ease;
+    }
+    .cta:hover{ background:var(--blue-hover); }
+    .cta:active{ transform:translateY(2px); }
+
+    /* RIGHT cream panel */
+    .right{
+      background:var(--cream);
+      border-left:16px solid var(--white); /* the thick white divider */
+      padding:44px 54px 36px;
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+    }
+
+    .photos{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:26px;                 /* close to screenshot spacing */
+      align-items:stretch;
+    }
+
+    /* BIG portrait cards */
+    .photo{
+      width:100%;
+      height:520px;             /* big images like screenshot */
+      overflow:hidden;
+      background:#ddd;
+    }
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .caption{
+      margin:8px auto 0;
+      max-width:88ch;
+      text-align:center;
+      font-size:16px;
+      line-height:1.6;
+      font-weight:600;
+      color:#111;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1050px){
+      h1{ font-size:58px; }
+      .left{ padding:56px 40px; }
+      .right{ padding:32px 28px; }
+      .photo{ height:460px; }
+    }
+
+    @media (max-width: 900px){
+      .hero{ grid-template-columns:1fr; }
+      .right{
+        border-left:none;
+        border-top:16px solid var(--white);
+      }
+      .photos{ grid-template-columns:1fr; }
+      .cta{ width:min(320px, 100%); }
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+  <header>
+    <div class="topbar">
+      <img class="logo" src="img/charitywater_logo_horizontal_WhiteText.png" alt="charity: water logo">
+    </div>
+  </header>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
+  <section class="hero">
+    <div class="left">
+      <h1>Every Dollar<br>Tracked. Millions<br>of Lives<br>Improved.</h1>
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
-        </div>
-    </section>
+      <p class="lead">
+        We fund proven clean water projects and publish transparent impact reports so you can see — and verify —
+        the change you create.
+      </p>
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+      <a class="cta" href="#impact">See Your Impact</a>
+    </div>
+
+    <div class="right">
+      <div class="photos">
+        <figure class="photo">
+          <img src="img/4408_Ethiopia_2019_CG-.jpg" alt="Family portrait near home">
+        </figure>
+
+        <figure class="photo">
+          <img src="img/4760_Ethiopia_2019_CG-.jpg" alt="Woman collecting water at a pump">
+        </figure>
+      </div>
+
+      <p class="caption">
+        Before clean water, families walked hours each day for unsafe sources. Today, clean water is close,
+        reliable, and tracked from start to finish — improving health, education, and opportunity.
+        This is measurable change you can see.
+      </p>
+    </div>
+  </section>
+
+  <section id="impact" style="padding:40px 20px;"></section>
 </body>
 </html>
